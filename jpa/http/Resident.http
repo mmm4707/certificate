@@ -1,0 +1,59 @@
+GET /residents/8 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+###
+
+POST /residents HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "residentSerialNumber": 8,
+  "name": "김서현",
+  "residentRegistrationNumber": "990517-1123123",
+  "genderCode": "남",
+  "birthDate": "1999-05-17T10:11:30",
+  "birthPlaceCode": "병원",
+  "registrationBaseAddress": "전라남도 여수시 웅천동",
+  "deathDate": null,
+  "deathPlaceCode": null,
+  "deathPlaceAddress": null
+}
+
+###
+
+
+POST /residents HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "residentSerialNumber": 9,
+  "name": "일이삼",
+  "residentRegistrationNumber": "920517-1174213",
+  "genderCode": "남",
+  "birthDate": "1992-02-11T10:11:30",
+  "birthPlaceCode": "바다",
+  "registrationBaseAddress": "전라남도 여수시 웅천동",
+  "deathDate": null,
+  "deathPlaceCode": null,
+  "deathPlaceAddress": null
+}
+
+###
+
+PUT localhost:8080/residents/8
+Content-Type: application/json
+
+{
+  "name": "김서현 ",
+  "deathDate": "2022-12-31T11:05:30",
+  "deathPlaceCode": "바다",
+  "deathPlaceAddress": "여수 웅천동"
+}
+
+###
+
+
+DELETE localhost:8080/residents/8

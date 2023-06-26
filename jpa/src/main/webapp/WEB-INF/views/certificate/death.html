@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/resources/style.css">
+
+    <style>
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            font-size: 18px;
+        }
+
+        th {
+            background-color: darkblue;
+            color: white;
+        }
+
+        td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            color: cornflowerblue;
+        }
+
+        tr:hover {background-color:#f5f5f5;}
+    </style>
+</head>
+
+<body>
+<h2>사망신고서</h2>
+<table>
+    <tr>
+        <td><strong>신고일 : </strong></td>
+        <td th:text="${reportDate}"/></td>
+    </tr>
+
+    <tr><td colspan="2"><h4>-사망자-</h4></td></tr>
+    <tr>
+        <td><strong>성명 : </strong></td>
+        <td th:text="${certificate.resident.name}"/></td>
+    </tr>
+    <tr>
+        <td><strong>주민등록번호 : </strong></td>
+        <td th:text="${certificate.resident.residentRegistrationNumber}"/></td>
+    </tr>
+    <tr>
+        <td><strong>사망일시 : </strong></td>
+        <td th:text="${deathDate}"/></td>
+    </tr>
+    <tr><td colspan="2"><b>사망장소</b></td></tr>
+    <tr>
+        <td><strong>주소 코드 : </strong></td>
+        <td th:text="${certificate.resident.deathPlaceCode}"/></td>
+    </tr>
+    <tr>
+        <td><strong>주소 : </strong></td>
+        <td th:text="${certificate.resident.deathPlaceAddress}"/></td>
+    </tr>
+
+    <tr><td colspan="2"><h4>-신고인-</h4></td></tr>
+    <tr>
+        <td><strong>성명 : </strong></td>
+        <td th:text="${deathReport.reportResident.name}"/></td>
+    </tr>
+    <tr>
+        <td><strong>주민등록번호 : </strong></td>
+        <td th:text="${deathReport.reportResident.residentRegistrationNumber}"/></td>
+    </tr>
+    <tr>
+        <td><strong>자격 : </strong></td>
+        <td th:text="${deathReport.deathReportQualificationsCode}"/></td>
+    </tr>
+    <tr>
+        <td><strong>이메일 : </strong></td>
+        <td th:text="${deathReport.emailAddress}"/></td>
+    </tr>
+    <tr>
+        <td><strong>전화번호 : </strong></td>
+        <td th:text="${deathReport.phoneNumber}"/></td>
+    </tr>
+</table>
+
+<br/>
+
+<a href="/resident?page=0?&size=5">
+    <input type="button" value="뒤로가기">
+</a>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/resources/style.css">
+
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            font-size: 18px;
+        }
+
+        th {
+            border: 1px solid #ddd;
+            color: white;
+        }
+
+        td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+            color: cornflowerblue;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        tr:hover {background-color:#f5f5f5;}
+    </style>
+
+</head>
+<body>
+<h2>출생신고서</h2>
+<hr/>
+
+<table>
+    <tr><th colspan="2">신고일</th><td colspan="3" th:text="${reportDate}"></td></tr>
+    <tr><th colspan="5">-출생자-</th></tr>
+    <tr><th colspan="2">성명</th><td colspan="3" th:text="${certificate.resident.name}"></td></tr>
+    <tr><th colspan="2">성별</th><td colspan="3" th:text="${certificate.resident.genderCode}"></td></tr>
+    <tr><th colspan="2">출생일시</th><td colspan="3" th:text="${birthDate}"></td></tr>
+    <tr><th colspan="2">출생장소</th><td colspan="3" th:text="${certificate.resident.birthPlaceCode}"></td></tr>
+    <tr><th colspan="2">등록기준지</th><td colspan="3" th:text="${certificate.resident.registrationBaseAddress}"></td></tr>
+    <tr><th colspan="5">-부모-</th></tr>
+    <tr><th colspan="2">부 | 성명</th><td colspan="3" th:text="${father.name}"></td></tr>
+    <tr><th colspan="2">부 | 주민등록번호</th><td colspan="3" th:text="${father.residentRegistrationNumber}"></td></tr>
+    <tr><th colspan="2">모 | 성명</th><td colspan="3" th:text="${mother.name}"></td></tr>
+    <tr><th colspan="2">모 | 주민등록번호</th><td colspan="3" th:text="${mother.residentRegistrationNumber}"></td></tr>
+    <tr><th colspan="5">-신고인-</th></tr>
+    <tr><th colspan="2">성명</th><td colspan="3" th:text="${birthReport.reportResident.name}"></td></tr>
+    <tr><th colspan="2">주민등록번호</th><td colspan="3" th:text="${birthReport.reportResident.residentRegistrationNumber}"></td></tr>
+    <tr><th colspan="2">자격</th><td colspan="3" th:text="${birthReport.birthReportQualificationsCode}"></td></tr>
+    <tr><th colspan="2">이메일</th><td colspan="3" th:text="${birthReport.emailAddress}"></td></tr>
+    <tr><th colspan="2">전화번호</th><td colspan="3" th:text="${birthReport.phoneNumber}"></td></tr>
+</table>
+
+<a href="/resident?page=0?&size=5">
+    <input type="button" value="뒤로가기">
+</a>
+
+</body>
+</html>

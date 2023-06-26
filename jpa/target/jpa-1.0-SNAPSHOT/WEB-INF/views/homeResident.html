@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>주민 목록</title>
+    <link rel="stylesheet" href="/resources/style.css">
+
+</head>
+
+<body>
+
+<h2 style="text-align:center; font-size:2em;">주민 목록</h2>
+<a href="/certificates">
+    <input type="button" value="증명서 리스트">
+</a>
+<table border="1" style="border-collapse: collapse" width="1200">
+    <tr class="table-header">
+        <th>번호</th>
+        <th>이름</th>
+        <th>성별</th>
+        <th>주민등록번호</th>
+        <th>생일</th>
+        <th>가족관계증명서</th>
+        <th>주민등록등본</th>
+        <th>출생신고서</th>
+        <th>사망신고서</th>
+    </tr>
+    <tr th:each="resident : ${residents}">
+        <td th:text="${resident.residentSerialNumber}"></td>
+        <td th:text="${resident.name}"></td>
+        <td th:text="${resident.genderCode}"></td>
+        <td th:text="${resident.residentRegistrationNumber}"></td>
+        <td th:text="${resident.birthDate}"></td>
+        <th>
+            <a th:href="@{/family/certificate/{number}(number=${resident.residentSerialNumber})}">
+                <input type="button" value="가족관계증명서">
+            </a>
+        </th>
+        <th>
+            <a th:href="@{/residentRegistration/certificate/{number}(number=${resident.residentSerialNumber})}">
+                <input type="button" value="주민등록등본">
+            </a>
+        </th>
+        <th>
+            <a th:href="@{/birth/certificate/{number}(number=${resident.residentSerialNumber})}">
+                <input type="button" value="출생신고서">
+            </a>
+        </th>
+        <th>
+            <a th:href="@{/death/certificate/{number}(number=${resident.residentSerialNumber})}">
+                <input type="button" value="사망신고서">
+            </a>
+        </th>
+        <th>
+            <form th:action="@{/residents/{number}(number=${resident.residentSerialNumber})}" th:method="delete" th:object="${resident}" style="display:inline;">
+                <input type="hidden" name="_method" value="delete" />
+                <input type="submit" value="삭제" />
+            </form>
+        </th>
+    </tr>
+</table>
+
+
+
+<div style="text-align:center; margin-top:20px;">
+        <span th:each="page : ${pages}">
+            <a th:href="@{/resident(page=${page}, size=5)}"> <span th:text="${page}"/></a>
+        </span>
+</div>
+
+
+</body>
+
+</html>

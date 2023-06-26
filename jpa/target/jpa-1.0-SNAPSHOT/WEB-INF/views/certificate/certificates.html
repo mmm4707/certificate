@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>증명서 발급 목록</title>
+  <link rel="stylesheet" href="/resources/style.css">
+
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 0.5em;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+<h1>증명서 발급 목록</h1>
+<table>
+  <thead>
+  <tr>
+    <th>확인 번호</th>
+    <th>주민 번호</th>
+    <th>증명서 타입 코드</th>
+    <th>증명서 발급 날짜</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="certificate : ${certificates}">
+    <td th:text="${certificate.certificateConfirmationNumber}"></td>
+    <td th:text="${certificate.resident.residentSerialNumber}"></td>
+    <td th:text="${certificate.certificateTypeCode}"></td>
+    <td th:text="${#dates.format(certificate.certificateIssueDate, 'yyyy-MM-dd')}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

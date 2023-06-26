@@ -1,0 +1,26 @@
+POST localhost:8080/residents/7/death
+Content-Type: application/json
+
+{
+  "residentSerialNumber": 5,
+  "birthDeathTypeCode": "사망",
+  "birthDeathReportDate": "2022-12-12",
+  "birthReportQualificationsCode": null,
+  "emailAddress": "qwe@gmail.com",
+  "phoneNumber": "112-1191-1141"
+}
+
+###
+
+PUT localhost:8080/residents/7/death/5
+Content-Type: application/json
+
+{
+  "birthDeathReportDate": "2040-01-26",
+  "emailAddress": "nhn@nhnacademy.com",
+  "phoneNumber": "011-0000-3939"
+}
+
+###
+
+DELETE localhost:8080/residents/7/death/5

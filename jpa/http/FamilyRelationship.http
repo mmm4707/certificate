@@ -1,0 +1,25 @@
+GET localhost:8080/residents/4/relationship
+Content-Type: application/json
+
+###
+
+POST localhost:8080/residents/6/relationship
+Content-Type: application/json
+
+{
+  "familySerialNumber": 7,
+  "relationship": "자녀"
+}
+
+###
+
+PUT localhost:8080/residents/6/relationship/7
+Content-Type: application/json
+
+{
+  "relationship": "동거인"
+}
+
+###
+
+DELETE localhost:8080/residents/6/relationship/7

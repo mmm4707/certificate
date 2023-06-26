@@ -1,0 +1,26 @@
+POST localhost:8080/residents/8/birth
+Content-Type: application/json
+
+{
+  "residentSerialNumber": 8,
+  "birthDeathTypeCode": "출생",
+  "birthDeathReportDate": "1999-05-17",
+  "deathReportQualificationsCode": null,
+  "emailAddress": "kim9905177@gmail.com",
+  "phoneNumber": "010-2339-4707"
+}
+
+###
+
+PUT localhost:8080/residents/7/birth/5
+Content-Type: application/json
+
+{
+  "birthDeathReportDate": "1999-02-17",
+  "emailAddress": "hihi@hihi.com",
+  "phoneNumber": "011-0000-3939"
+}
+
+###
+
+DELETE localhost:8080/residents/7/birth/5
