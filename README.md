@@ -24,7 +24,7 @@ spring mvc, jpa를 활용한 주민 증명서 출력 프로젝트  <br>
 ![5](https://github.com/mmm4707/certificate/assets/39482751/82db3028-048a-45a0-a0bc-910dc683d710)<br>
 
 ## 기본 기능  
--MySql DB에 들어있는 내용으로 가족관계증명서, 주민등록등본, 출생신고서, 사망신고서 출력가능
+-MySql DB에 들어있는 내용으로 가족관계증명서, 주민등록등본, 출생신고서, 사망신고서 출력가능<br>
 -Spring MVC를 이용해 웹 애플리케이션을 구성<br>
 -Spring Data JPA와 Querydsl을 이용해 데이터를 조회<br>
 -특정 쿼리를 정의하기 위해@Query 어노테이션 사용<br>
